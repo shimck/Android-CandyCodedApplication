@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -82,6 +83,13 @@ public class MainActivity extends AppCompatActivity {
     // ***
     // TODO - Task 1 - Show Store Information Activity
     // ***
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        super.onOptionsItemSelected(item);
+        Intent myIntent = new Intent(MainActivity.this, InfoActivity.class);
+        startActivity(myIntent);
+        return true;
+    }
 
     private void addCandiesToDatabase(Candy[] candies) {
         SQLiteDatabase db = candyDbHelper.getWritableDatabase();
